@@ -16,7 +16,6 @@ C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\emphasys.TagHelpers.output.cach
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\emphasys.RazorCoreGenerate.cache
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
-C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
 C:\meusprojetos\emphasys\obj\Debug\netcoreapp2.2\emphasys.RazorTargetAssemblyInfo.cache
