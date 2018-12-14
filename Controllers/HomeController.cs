@@ -76,7 +76,7 @@ namespace emphasys.Controllers {
                 blogItem.Link = item.Element ("link").Value;
                 blogItem.PubDate = Convert.ToDateTime (item.Element ("pubDate").Value);
                 blogItem.Description = item.Element ("description").Value;
-                blogItem.Image = item.Value.Split (new string[] { "img" }, StringSplitOptions.None) [1].Split (new string[] { "src=\"" }, StringSplitOptions.None) [1].Split (new string[] { "\"" }, StringSplitOptions.None) [0];
+                // blogItem.Image = item.Value.Split (new string[] { "img" }, StringSplitOptions.None) [1].Split (new string[] { "src=\"" }, StringSplitOptions.None) [1].Split (new string[] { "\"" }, StringSplitOptions.None) [0];
                 blogItem.Categories = new List<string> ();
                 foreach (var category in item.Elements ("category")) {
                     blogItem.Categories.Add (category.Value);
