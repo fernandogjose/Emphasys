@@ -77,6 +77,7 @@ namespace emphasys.Controllers {
                 blogItem.PubDate = Convert.ToDateTime (item.Element ("pubDate").Value);
                 blogItem.Description = item.Element ("description").Value;
                 // blogItem.Image = item.Value.Split (new string[] { "img" }, StringSplitOptions.None) [1].Split (new string[] { "src=\"" }, StringSplitOptions.None) [1].Split (new string[] { "\"" }, StringSplitOptions.None) [0];
+                blogItem.Image = "https://www.minutoseguros.com.br/blog/wp-content/uploads/2018/12/para-brisa-trincado-conclusao.jpg";
                 blogItem.Categories = new List<string> ();
                 foreach (var category in item.Elements ("category")) {
                     blogItem.Categories.Add (category.Value);
