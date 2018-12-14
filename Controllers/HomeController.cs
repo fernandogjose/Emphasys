@@ -44,12 +44,12 @@ namespace emphasys.Controllers {
             var words = wordRequest.Split (' ');
 
             foreach (var word in words) {
-                if (string.IsNullOrEmpty (word.Trim()) || _wordsExceptions.Any (x => x == word.ToLower()))
+                if (string.IsNullOrEmpty (word.Trim ()) || _wordsExceptions.Any (x => x == word.ToLower ()))
                     continue;
 
-                var wordInBestWords = bestWords.FirstOrDefault (x => x.Word == word.ToLower());
+                var wordInBestWords = bestWords.FirstOrDefault (x => x.Word == word.ToLower ());
                 if (wordInBestWords == null) {
-                    bestWords.Add (new BlogBestWordViewModel { Word = word.ToLower(), Quantity = 1 });
+                    bestWords.Add (new BlogBestWordViewModel { Word = word.ToLower (), Quantity = 1 });
                 } else {
                     wordInBestWords.Quantity += 1;
                 }
@@ -76,8 +76,13 @@ namespace emphasys.Controllers {
                 blogItem.Link = item.Element ("link").Value;
                 blogItem.PubDate = Convert.ToDateTime (item.Element ("pubDate").Value);
                 blogItem.Description = item.Element ("description").Value;
-                // blogItem.Image = item.Value.Split (new string[] { "img" }, StringSplitOptions.None) [1].Split (new string[] { "src=\"" }, StringSplitOptions.None) [1].Split (new string[] { "\"" }, StringSplitOptions.None) [0];
-                blogItem.Image = "https://www.minutoseguros.com.br/blog/wp-content/uploads/2018/12/para-brisa-trincado-conclusao.jpg";
+
+                try {
+                    blogItem.Image = item.Value.Split (new string[] { "img" }, StringSplitOptions.None) [1].Split (new string[] { "src=\"" }, StringSplitOptions.None) [1].Split (new string[] { "\"" }, StringSplitOptions.None) [0];
+                } catch {
+                    blogItem.Image = "https://www.minutoseguros.com.br/blog/wp-content/uploads/2018/12/para-brisa-trincado-conclusao.jpg";
+                }
+
                 blogItem.Categories = new List<string> ();
                 foreach (var category in item.Elements ("category")) {
                     blogItem.Categories.Add (category.Value);
